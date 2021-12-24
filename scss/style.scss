@@ -1,0 +1,748 @@
+$mainColor: #08526d;
+$secondaryColor: #ec1c23;
+
+@mixin buttonStyle() {
+    border: none;
+    background-color: $secondaryColor;
+    color: #FFF;
+    padding: 3px 15px;
+    margin-bottom: 50px;
+}
+@mixin overlayStyle() {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    top: 0px;
+    left: 0px;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+// Start Header
+header {
+    // Start Upper Head
+    .upper-head {
+        background-color: $mainColor;
+        color: #FFF;
+        padding: 7px;
+        .left {
+            i:last-of-type {
+                margin-left: 20px;
+            }
+            span {
+                margin-left: 5px
+            }
+        }
+        .right {
+            span {
+                margin-right: 50px;
+            }
+            button {
+                border: 1px solid $secondaryColor;
+                background-color: transparent;
+                color: #FFF;
+                padding: 3px 15px;
+            }
+        }
+    }
+    // End Upper Head
+    // Start Navbar
+    .navbar-light {
+        .navbar-brand {
+            color: $mainColor;
+            font-weight: bold;
+            font-size: 24px;
+            span {
+                color: $secondaryColor;
+            }
+        }
+        .navbar-collapse {
+            .navbar-nav {
+                .nav-item {
+                    margin-right: 20px;
+                    .nav-link {
+                        color: $mainColor;
+                        font-size: 18px;
+                    }
+                }
+                .nav-item:last-of-type {
+                    margin-right: 0px;
+                }
+                .active > .nav-link {
+                    color: $secondaryColor;
+                    font-weight: bold;
+                }
+            }
+        }
+    }
+    // End Navbar
+    // Start Bot Head
+    .carousel {
+        .overlay {
+            @include overlayStyle();
+            p {
+                width: 45%;
+                color: #fff;
+                font-size: 50px;
+                margin: 5% 0px 0px 10%;
+                span {
+                    color: $secondaryColor;
+                }
+            }
+        }
+        .carousel-inner {
+            div {
+                background-size: cover;
+            }
+            div:first-of-type {
+                background-image: url("../images/2586589.jpg");
+            }
+            div:nth-of-type(2) {
+                background-image: url("../images/download.jpg");
+            }
+            div:last-of-type {
+                background-image: url("../images/ziuapc.jpg");
+            }
+        }
+    }
+    // End Bot Head
+}
+
+// Extra Small Media
+@media all and (max-width: 575px) {
+    .upper-head {
+        span {
+            font-size: 14px;
+        }
+        i {
+            display: none;
+        }
+    
+        .left {
+            span {
+                margin-left: 0px;
+                padding-right: 20px;
+            }
+        }
+        .right {
+            text-align: left !important;
+            margin-top: 10px;
+            span {
+                display: none;
+            }
+        }
+    }
+    .carousel {
+        .overlay {
+            p {
+                width: 45%;
+                color: #fff;
+                font-size: 30px !important;
+                margin: 27% 0px 0px 10% !important;
+            }
+        }
+    }
+}
+
+// Small Media
+@media all and (min-width: 576px) and (max-width: 767px) {
+    header {
+        .upper-head {
+            .right {
+                text-align: left !important;
+                margin-top: 10px;
+            }
+        }
+    }
+}
+// End Header
+// Start Feat Article
+.feat {
+    background-color: #FFF;
+    .img {
+        width: 50px;
+        height: 50px;
+        background-color: $secondaryColor;
+        border-radius: 50% 50%;
+        margin: 40px auto 10px;
+        i {
+            color: #FFF;
+            font-size: 20px;
+            line-height: 50px;
+        }
+    }
+    .text {
+        margin-bottom: 40px;
+        h4 {
+            color: $mainColor;
+        }
+    }
+}
+// End Feat Article
+// Start Overview Article
+.overview {
+    background-color: #f8f9fa;
+    .body {
+        h2 {
+            padding-top: 50px;
+        }
+        p:first-of-type {
+            padding-top: 20px;
+        }
+        p:last-of-type {
+            font-style: italic;
+            font-size: 20px;
+        }
+        button {
+            @include buttonStyle();
+        }
+    }
+}
+// End Overview Article
+// Start Featured Work Article
+.feat-work {
+    background-color: #FFF;
+    .heading {
+        h2 {
+            padding-top: 50px;
+        }
+        p {
+            padding-top: 10px;
+        }
+    }
+    .lists {
+        .row {
+            margin: 0px;
+        }
+        button {
+            @include buttonStyle();
+            background-color: #FFF;
+            border: 1px solid #000;
+            color: #000;
+            margin: 10px 10px 0px 0px;
+            &:hover {
+                background-color: $secondaryColor;
+                transition: all 0.3s ease;
+            }
+        }
+        button:last-of-type {
+            margin-right: 0px;
+        }
+        button.active {
+            background-color: $secondaryColor;
+            color: #FFF;
+        }
+    }
+    .works {
+        margin-top: 30px;
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            img {
+                max-width: 100%;
+            }
+        }
+    }
+}
+
+// Extra Small Media(max-width: 575px)
+@media all and (max-width: 575px) {
+    .feat-work {
+        .lists {
+            button {
+                margin: 10px 0px 10px 0px;
+            }
+            button:last-of-type {
+                margin-right: 0px;
+            }
+        }
+        .works {
+            .grid {
+                grid-template-columns: repeat(1, 1fr);
+                img {
+                    min-width: 100%;
+                }
+            }
+        }
+    }
+}
+
+// All Media Queries
+@media all and (min-width: 576px) and (max-width: 1199px) {
+    .feat-work {
+        .lists {
+            button {
+                margin: 10px 0px 10px 0px;
+            }
+            button:last-of-type {
+                margin-right: 0px;
+            }
+        }
+        .works {
+            .grid {
+                grid-template-columns: repeat(4, 1fr);
+                img {
+                    min-width: 100%;
+                }
+            }
+        }
+    }
+}
+
+// Small Media Query For Grid
+@media all and (min-width: 576px) and (max-width: 767px) {
+    .feat-work {
+        .works {
+            .grid {
+                grid-template-columns: repeat(2, 1fr);
+                img {
+                    min-width: 100%;
+                }
+            }
+        }
+    }
+}
+// End Featured Work Article
+// Start Latest Posts Article
+.posts {
+    .head {
+        h2 {
+            padding-top: 50px;
+        }
+        p {
+            padding-top: 10px;
+            padding-bottom: 40px;
+        }
+    }
+    .cards {
+        .card {
+            background-color: #f8f9fa;
+            margin-right: 20px;
+            margin-bottom: 50px;
+            .card-body {
+                p:first-of-type {
+                    color: grey;
+                }
+                a {
+                    display: block;
+                    margin-top: 10px;
+                }
+            }
+        }
+        .card:last-of-type {
+            margin-right: 0px;
+        }
+    }
+}
+
+// Small Media Query
+@media all and (min-width: 576px) and (max-width: 767px) {
+    .posts {
+        .cards {
+            .card {
+                margin-right: 0px;
+            }
+        }
+    }
+}
+// End Latest Posts Article
+// Start Testimonials Article
+.test {
+    .carousel {
+        .overlay {
+            @include overlayStyle();
+        }
+        .carousel-inner {
+            .carousel-item {
+                .w-100 {
+                    min-height: 100%;
+                }
+                .carousel-caption {
+                    .info {
+                        img {
+                            width: 150px;
+                            height: 150px;
+                            border-radius: 50% 50%;
+                        }
+                    }
+                    > p {
+                        margin-bottom: 100px;
+                    }
+                }
+            }
+        }
+        button {
+            z-index: 2;
+        }
+    }
+}
+
+// Extra Small Media Query
+@media all and (max-width: 575px) {
+    .test {
+        .carousel {
+            .carousel-inner {
+                .carousel-item {
+                    .carousel-caption {
+                        > p {
+                            margin-bottom: 30px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+// End Testimonials Article
+// Start Pricing Article
+.pricing {
+    background-color: #f8f9fa;
+    .head {
+        h2 {
+            padding-top: 50px;
+            color: $mainColor;
+        }
+        p {
+            padding-top: 10px;
+        }
+    }
+    .prices {
+        margin-top: 80px;
+        .row {
+            div {
+                margin-right: 20px;
+                background-color: #FFF;
+                margin-bottom: 50px;
+                h3 {
+                    color: $mainColor;
+                    padding-top: 20px;
+                }
+                .scheme {
+                    background-color: #f8f9fa;
+                    padding: 15px;
+                    font-weight: bold;
+                    font-size: 30px;
+                    color: $mainColor;
+                }
+                button {
+                    @include buttonStyle();
+                    padding: 10px 60px;
+                }
+            }
+            div:last-of-type {
+                margin-right: 0px;
+            }
+            .price2 {
+                top: -30px;
+                box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+                .scheme-change {
+                    background-color: $secondaryColor;
+                    padding: 15px;
+                    font-weight: bold;
+                    font-size: 30px;
+                    color: #FFF;
+                }
+                .button-change {
+                    background-color: $mainColor;
+                }
+            }
+        }
+    }
+}
+@media all and (min-width: 576px) and (max-width: 767px) {
+    .pricing {
+        .prices {
+            .row {
+                div {
+                    margin-right: 0px;
+                }
+            }
+        }
+    }
+}
+// End Pricing Article
+// Start Choose Article
+.choose {
+    .text {
+        background-color: $mainColor;
+        color: #FFF;
+        padding-left: 40px;
+        h2 {
+            padding-top: 70px;
+            padding-bottom: 30px;
+        }
+        button {
+            @include buttonStyle();
+            padding: 10px 50px;
+        }
+    }
+}
+@media all and (max-width: 575px) {
+    .choose {
+        .text {
+            padding-left: 15px;
+            h2 {
+                font-size: 28px;
+            }
+        }
+        .row {
+            .logo {
+                display: none;
+            }
+        }
+    }
+}
+// End Choose Article
+// Start Statistics Article
+.stats {
+    background-color: #f8f9fa;
+    .row {
+        div {
+            font-weight: bold;
+            i {
+                color: $mainColor;
+                font-size: 36px;
+                padding-top: 50px;
+            }
+            p:first-of-type {
+                padding-top: 10px;
+                color: $mainColor;
+                font-size: 26px;
+                margin-bottom: 0px;
+            }
+            p:last-of-type {
+                font-size: 18px;
+                color: $secondaryColor;
+                margin-bottom: 50px;
+            }
+        }
+    }
+}
+// End Statistics Article
+// Start Contact Us Article
+.contact {
+    background-color: $secondaryColor;
+    .row {
+        align-items: center;
+        p {
+            font-size: 24px;
+            color: #FFF;
+            padding-top: 10px;
+        }
+        button {
+            @include buttonStyle();
+            border: 1px solid #FFF;
+            padding: 10px 50px;
+            margin-top: 50px;
+        }
+    }
+}
+
+// Extra Small Media
+@media all and (max-width: 575px) {
+    .contact {
+        .row {
+            p {
+                font-size: 18px;
+                padding-top: 30px;
+            }
+            button {
+                margin-top: 30px;
+            }
+        }
+    }
+}
+
+// Small Media
+@media all and (min-width: 576px) and (max-width: 767px) {
+    .contact {
+        .row {
+            p {
+                font-size: 18px;
+            }
+        }
+    }
+}
+// End Contact Us Article
+// Start Footer Article
+.foot {
+    .row {
+        .left-foot {
+            margin-bottom: 50px;
+            h3 {
+                color: $mainColor;
+                padding-top: 50px;
+                span {
+                    color: $secondaryColor;
+                }
+            }
+            p {
+                padding-top: 10px;
+            }
+            i, > span {
+                color: $mainColor;
+                cursor: pointer;
+            }
+            > span {
+                padding-left: 10px;
+            }
+        }
+        .mid-foot {
+            padding-left: 20px;
+            h4 {
+                padding-top: 50px;
+                color: $mainColor;
+                padding-bottom: 10px;
+            }
+            .row {
+                .col1, .col2 {
+                    div {
+                        i, > span {
+                            cursor: pointer;
+                            font-size: 16px;
+                        }
+                        > span {
+                            padding-left: 10px;
+                        }
+                    }
+                }
+            }
+        }
+        .right-foot {
+            h3 {
+                color: $mainColor;
+                padding-top: 50px;
+                padding-bottom: 10px;
+            }
+            p {
+                padding-bottom: 10px;
+            }
+        }
+    }
+}
+
+// Extra Small and Small Media
+@media all and (max-width: 767px) {
+    .foot {
+        .row {
+            .left-foot {
+                margin-bottom: 20px;
+            }
+            .mid-foot {
+                .row {
+                    .col1, .col2 {
+                        div {
+                            i, > span {
+                                cursor: pointer;
+                                font-size: 16px;
+                            }
+                            > span {
+                                padding-left: 10px;
+                            }
+                        }
+                    }
+                    .col2 {
+                        margin-top: 30px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Medium Media
+@media all and (min-width: 768px) and (max-width: 991px) {
+    .foot {
+        .row {
+            .right-foot {
+                p {
+                    padding-bottom: 10px;
+                }
+            }
+        }
+    }
+}
+// End Footer Article
+// Start Copyrights
+.copyright {
+    position: relative;
+    background-color: #f8f9fa;
+    .row {
+        align-items: center;
+        .left-copy {
+            p {
+                font-size: 22px;
+                padding-top: 10px;
+            }
+        }
+        .right-copy {
+            text-align: right;
+            i {
+                font-size: 22px;
+                cursor: pointer;
+                margin-right: 20px;
+            }
+            i:first-of-type {
+                color: #1877F2;
+            }
+            i:nth-of-type(2) {
+                color: #1DA1F2;
+            }
+            i:nth-of-type(3) {
+                color: #0A66C2;
+            }
+            i:nth-of-type(4) {
+                color: #E4405F;
+            }
+            i:last-of-type {
+                color: #CD201F;
+            }
+        }
+    }
+    &:after {
+        content: "";
+        position: absolute;
+        top: -5px;
+        left: 0px;
+        width: 100%;
+        height: 5px;
+        background-color: $mainColor;
+    }
+}
+
+// Extra Small Media
+@media all and (max-width: 575px) {
+    .copyright {
+        .row {
+            .left-copy {
+                p {
+                    font-size: 14px;
+                }
+            }
+            .right-copy {
+                text-align: left;
+                i {
+                    font-size: 16px;
+                }
+            }
+        }
+    }
+}
+
+// Small Media
+@media all and (min-width: 576px) and (max-width: 767px) {
+    .copyright {
+        .row {
+            .left-copy {
+                p {
+                    font-size: 16px;
+                }
+            }
+            .right-copy {
+                i {
+                    font-size: 18px;
+                }
+            }
+        }
+    }
+}
+// End Copyrights

@@ -1,0 +1,413 @@
+include assets/mixins.pug
+doctype
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no")
+        title Bootstrap Project
+        include assets/styles
+        style
+        script
+        <!--[if lt IE 9]>
+            script(src="js/html5shiv.min.js")
+        <![endif]-->
+    body
+        //-Start Header
+        header
+            //-Start Upper Bar
+            div.upper-head
+                div.container
+                    div.row
+                        div(class="left col-12 col-md-6")|
+                            |
+                            i(class="fas fa-phone-alt")
+                            |
+                            |
+                            span 0111111111111
+                            |
+                            |
+                            i(class="far fa-envelope")
+                            |
+                            |
+                            span name@hotmail.com
+                        div(class="right col-12 col-md-6 text-right")|
+                            |
+                            span Let's Work Together
+                            button Get Started
+            //-End Upper Bar
+            //-Start Navbar
+            nav.navbar.navbar-expand-lg.navbar-light.bg-light
+                div.container|
+                    |
+                    a(class="navbar-brand",href='#') Elite 
+                        span Corp
+                    button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarSupportedContent', aria-controls='navbarSupportedContent', aria-expanded='false', aria-label='Toggle navigation')|
+                        |
+                        span.navbar-toggler-icon
+                    #navbarSupportedContent.collapse.navbar-collapse
+                        ul.navbar-nav.ml-auto
+                            li.nav-item.active
+                                a.nav-link(href='#') Home 
+                                    span.sr-only (current)
+                            li.nav-item
+                                a.nav-link(href='#') About
+                            li.nav-item
+                                a.nav-link(href='#') Work
+                            li.nav-item
+                                a.nav-link(href='#') Blog
+                            li.nav-item
+                                a.nav-link(href='#') Contact
+            //-End Navbar
+            //-Start Bottom Bar
+            div(class="carousel slide bot-head" id="carouselExampleIndicators", data-ride="carousel")
+                div.overlay: p(class="h1") We are independent design and 
+                    span development 
+                    |agency
+                ol.carousel-indicators
+                    li.active(data-target='#carouselExampleIndicators', data-slide-to='0')
+                    li(data-target='#carouselExampleIndicators', data-slide-to='1')
+                    li(data-target='#carouselExampleIndicators', data-slide-to='2')
+                .carousel-inner
+                    .carousel-item.active
+                    .carousel-item
+                    .carousel-item
+            //-End Bottom Bar
+        //-End Header
+        //-Start Articles
+        //-Start Features
+        article(class="feat")
+            div(class="container")
+                div(class="row")
+                    div(class="feat1 col-sm-6 col-lg-3 text-center")
+                        div(class="img")
+                            i(class="fas fa-lightbulb")
+                        div(class="text")
+                            h4 Great Ideas
+                            p Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam nihil ducimus voluptatum beatae debitis, asperiores repellendus mollitia repudiandae.
+                    div(class="feat2 col-sm-6 col-lg-3 text-center")
+                        div(class="img")
+                            i(class="fas fa-cogs")
+                        div(class="text")
+                            h4 Quick Settings
+                            p Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam nihil ducimus voluptatum beatae debitis, asperiores repellendus mollitia repudiandae.
+                    div(class="feat3 col-sm-6 col-lg-3 text-center")
+                        div(class="img")
+                            i(class="fas fa-cloud")
+                        div(class="text")
+                            h4 Cloud Service
+                            p Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam nihil ducimus voluptatum beatae debitis, asperiores repellendus mollitia repudiandae.
+                    div(class="feat4 col-sm-6 col-lg-3 text-center")
+                        div(class="img")
+                            i(class="fas fa-database")
+                        div(class="text")
+                            h4 Cross Development
+                            p Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam nihil ducimus voluptatum beatae debitis, asperiores repellendus mollitia repudiandae.
+        //-End Features
+        //-Start Company Overview
+        article(class="overview")
+            div(class="container")
+                div(class="body text-center")
+                    h2 Company Review
+                    +loremBlock
+                    p Let's Start Today
+                    button View More
+        //-End Company Overview
+        //-Start Featured Work
+        article(class="feat-work")
+            div(class="container")
+                div(class="heading text-center")
+                    h2 Featured Work
+                    +loremBlock
+                div(class="lists")
+                    div(class="row")
+                        button(class="button1 col-12 col-sm-6 col-md-4 col-xl active", data-class="all") All
+                        button(class="button2 col-12 col-sm-6 col-md-4 col-xl", data-class=".website") Website
+                        button(class="button3 col-12 col-sm-6 col-md-4 col-xl", data-class=".logo") Logo And Branding
+                        button(class="button4 col-12 col-sm-6 col-md-4 col-xl", data-class=".graphic") Graphic Design
+                        button(class="button5 col-12 col-sm-6 col-md-4 col-xl", data-class=".marketing") Online Marketing
+                        button(class="button6 col-12 col-sm-6 col-md-4 col-xl", data-class=".video") Video
+                div(class="works")
+                    div(class="grid")|
+                        |
+                        img(src="./images/01.jpg" alt="Image1" class="website")
+                        |
+                        |
+                        img(src="./images/02.jpg" alt="Image2" class="video")
+                        |
+                        |
+                        img(src="./images/03.jpg" alt="Image3" class="logo marketing")
+                        |
+                        |
+                        img(src="./images/01.jpg" alt="Image4" class="website")
+                        |
+                        |
+                        img(src="./images/03.jpg" alt="Image5" class="graphic")
+                        |
+                        |
+                        img(src="./images/06.jpg" alt="Image6" class="logo")
+                        |
+                        |
+                        img(src="./images/07.jpg" alt="Image7" class="video marketing")
+                        |
+                        |
+                        img(src="./images/02.jpg" alt="Image8" class="graphic")
+        //-End Featured Work
+        //-Start Latest Posts
+        article(class="posts")
+            div(class="container")
+                div(class="head text-center")
+                    h2 Latest Posts
+                    +loremBlock
+                div(class="cards")
+                    div(class="row")
+                        .card(class="col-sm-6 col-md card1")|
+                            |
+                            img.card-img-top(src='./images/08.jpg' alt='card1')
+                            .card-body
+                                h5.card-title Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                p March 24 2018.
+                                p.card-text
+                                | Some quick example text to build on the card title and make up the bulk of the card&apos;s content.
+                                |
+                                a.btn.btn-primary(href='#') Read More
+                        .card(class="col-sm-6 col-md card2")|
+                            |
+                            img.card-img-top(src='./images/04.jpg' alt='card2')
+                            .card-body
+                                h5.card-title Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                p March 24 2018.
+                                p.card-text
+                                | Some quick example text to build on the card title and make up the bulk of the card&apos;s content.
+                                a.btn.btn-primary(href='#') Read More
+                        .card(class="col-sm-6 col-md card3")|
+                            |
+                            img.card-img-top(src='./images/08.jpg' alt='card3')
+                            .card-body
+                                h5.card-title Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                p March 24 2018.
+                                p.card-text
+                                | Some quick example text to build on the card title and make up the bulk of the card&apos;s content.
+                                a.btn.btn-primary(href='#') Read More
+        //-End Latest Posts
+        //-Start Testemonials
+        article(class="test")
+            #carouselExampleCaptions.carousel.slide(data-ride='carousel')
+                div(class="overlay")
+                ol.carousel-indicators
+                    li.active(data-target='#carouselExampleCaptions' data-slide-to='0')
+                    li(data-target='#carouselExampleCaptions' data-slide-to='1')
+                    li(data-target='#carouselExampleCaptions' data-slide-to='2')
+                .carousel-inner
+                    .carousel-item.active
+                        img.d-block.w-100(src='./images/ziuapc.jpg' alt='image1')
+                        .carousel-caption.d-none.d-block
+                            div(class="info")|
+                                |
+                                img(src="./images/man.jpg", alt="image1" class="img-thumbnail")
+                                h5 Tyler Donald
+                                p Company CEO.
+                            p Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam nihil ducimus voluptatum beatae debitis, asperiores repellendus mollitia repudiandae
+                    .carousel-item
+                        img.d-block.w-100(src='./images/ziuapc.jpg' alt='image2')
+                        .carousel-caption.d-none.d-block
+                            div(class="info")|
+                                |
+                                img(src="./images/man.jpg", alt="image1" class="img-thumbnail")
+                                h5 Tyler Donald
+                                p Company CEO.
+                            p Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam nihil ducimus voluptatum beatae debitis, asperiores repellendus mollitia repudiandae
+                    .carousel-item
+                        img.d-block.w-100(src='./images/ziuapc.jpg' alt='image3')
+                        .carousel-caption.d-none.d-block
+                            div(class="info")|
+                                |
+                                img(src="./images/man.jpg", alt="image1" class="img-thumbnail")
+                                h5 Tyler Donald
+                                p Company CEO.
+                            p Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam nihil ducimus voluptatum beatae debitis, asperiores repellendus mollitia repudiandae
+                button.carousel-control-prev(type='button' data-target='#carouselExampleCaptions' data-slide='prev')
+                    span.carousel-control-prev-icon(aria-hidden='true')
+                    span.sr-only Previous
+                button.carousel-control-next(type='button' data-target='#carouselExampleCaptions' data-slide='next')
+                    span.carousel-control-next-icon(aria-hidden='true')
+                    span.sr-only Next
+        //-End Testemonials
+        //-Start Pricing
+        article(class="pricing")
+            div(class="container")
+                div(class="head text-center")
+                    h2 Pricing Table
+                    +loremBlock
+                div(class="prices")
+                    div(class="row")
+                        div(class="price1 col-sm-6 col-md text-center")
+                            h3 Small Business
+                            p Lorem Ipsum
+                            p(class="scheme") $99/Year
+                            - for (let x=0; x<5; x++)
+                                p Lorem Ipsum
+                            button Buy Now
+                        div(class="price2 col-sm-6 col-md text-center")
+                            h3 Corporate
+                            p Lorem Ipsum
+                            p(class="scheme-change") $99/Year
+                            - for (let x=0; x<5; x++)
+                                p Lorem Ipsum
+                            button(class="button-change") Buy Now
+                        div(class="price3 col-sm-6 col-md text-center")
+                            h3 Enterprise
+                            p Lorem Ipsum
+                            p(class="scheme") $99/Year
+                            - for (let x=0; x<5; x++)
+                                p Lorem Ipsum
+                            button Buy Now
+        //-End Pricing
+        //-Start Choose
+        article(class="choose")
+            div(class="container")
+                div(class="row")
+                    div(class="logo col-sm-12 col-md-6")
+                        img(src="./images/logo.jpg", alt="logo" class="img-fluid")
+                    div(class="text col-sm-12 col-md-6")
+                        h2 Why Choose Us
+                        +loremBlock
+                        +loremBlock
+                        button View More
+        //-End Choose
+        //-Start Statistics
+        article(class="stats")
+            div(class="container")
+                div(class="row")
+                    div(class="stat1 text-center col-sm-6 col-lg")|
+                        |
+                        i(class="fas fa-user-alt")
+                        p 624
+                        p Happy Clients
+                    div(class="stat2 text-center col-sm-6 col-lg")|
+                        |
+                        i(class="fas fa-tree")
+                        p 624
+                        p Amazing Tours
+                    div(class="stat3 text-center col-sm-6 col-lg")|
+                        |
+                        i(class="fas fa-briefcase")
+                        p 624
+                        p Partners
+                    div(class="stat3 text-center col-sm-6 col-lg")|
+                        |
+                        i(class="fas fa-comment-alt")
+                        p 624
+                        p Question Answered
+        //-End Statistics
+        //-Start Contact Us
+        article(class="contact")
+            div(class="container")
+                div(class="row")
+                    p(class="col-sm-8") You think we are cool? Let' work together
+                    button(class="col-sm-4") Contact Us
+        //-End Contact Us
+        //-Start Footer
+        article(class="foot")
+            div(class="container")
+                div(class="row")
+                    div(class="left-foot col-md-4")
+                        h3 Elite 
+                            span Corp
+                        +loremBlock
+                        i(class="fas fa-arrow-circle-down")
+                        span Read More
+                    div(class="mid-foot col-md-5")
+                        h4 Helpful Links
+                        div(class="row")
+                            div(class="col1 col-md")
+                                div(class="row1")|
+                                    |
+                                    i(class="fas fa-arrow-right")
+                                    |
+                                    |
+                                    span About
+                                div(class="row2")|
+                                    |
+                                    i(class="fas fa-arrow-right")
+                                    |
+                                    |
+                                    span Portfolio
+                                div(class="row3")|
+                                    |
+                                    i(class="fas fa-arrow-right")
+                                    |
+                                    |
+                                    span Team
+                                div(class="row4")|
+                                    |
+                                    i(class="fas fa-arrow-right")
+                                    |
+                                    |
+                                    span Pricing
+                                div(class="row5")|
+                                    |
+                                    i(class="fas fa-arrow-right")
+                                    |
+                                    |
+                                    span Privacy
+                            div(class="col2 col-md")
+                                div(class="row1")|
+                                    |
+                                    i(class="fas fa-arrow-right")
+                                    |
+                                    |
+                                    span FAQ
+                                div(class="row2")|
+                                    |
+                                    i(class="fas fa-arrow-right")
+                                    |
+                                    |
+                                    span Blog
+                                div(class="row3")|
+                                    |
+                                    i(class="fas fa-arrow-right")
+                                    |
+                                    |
+                                    span Works
+                                div(class="row4")|
+                                    |
+                                    i(class="fas fa-arrow-right")
+                                    |
+                                    |
+                                    span Benefits
+                                div(class="row5")|
+                                    |
+                                    i(class="fas fa-arrow-right")
+                                    |
+                                    |
+                                    span Contact
+                    div(class="right-foot col-md-3")
+                        h3 Contact Us
+                        p 5479 Street, City, Country
+                        p Phone: 01111111111
+                        p Email: name@hotmail.com
+        //-End Footer
+        //-End Articles
+        //-Start Copyrights
+        footer(class="copyright")
+            div(class="container")
+                div(class="row")
+                    div(class="left-copy col-12 col-sm-6")
+                        p Copyrights &copy; Are All Reserved
+                    div(class="right-copy col-12 col-sm-6")|
+                        |
+                        i(class="fab fa-facebook")
+                        |
+                        |
+                        i(class="fab fa-twitter")
+                        |
+                        |
+                        i(class="fab fa-linkedin-in")
+                        |
+                        |
+                        i(class="fab fa-instagram")
+                        |
+                        |
+                        i(class="fab fa-youtube")
+        //-End Copyrights
+        include assets/scripts
